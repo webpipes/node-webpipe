@@ -1,0 +1,19 @@
+{
+  "name": "node-webpipe",
+  "version": "0.0.1",
+  "description": "WebPipe server library for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webpipes/node-webpipe.git"
+  },
+  "keywords": [
+    "webpipe",
+    "webpipes"
+  ],
+  "author": "Tom Robinson <tlrobinson@gmail.com> (http://tlrobinson.net/)",
+  "license": "BSD"
+}
