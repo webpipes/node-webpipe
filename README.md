@@ -11,12 +11,12 @@ The node-webpipe module offers two ways of creating a WebPipe Block. Both ways a
 
 Create a Block by passing the Block Definition as an object.
 
-* [JavaScript Example](./examples/block-with-definition.js)
-* [CoffeeScript Example](./examples/block-with-definition.coffee)
+* [JavaScript Example](https://github.com/webpipes/node-webpipe/blob/master/examples/block-with-definition.js)
+* [CoffeeScript Example](https://github.com/webpipes/node-webpipe/blob/master/examples/block-with-definition.coffee)
 
 ### Option 2: 
 
 Create a Block using the Chaining API to automagically construct the Block Definition and handler.
 
-* [JavaScript Example](./examples/block-with-chaining.js)
-* [CoffeeScript Example](./examples/block-with-chaining.coffee)
+* [JavaScript Example](https://github.com/webpipes/node-webpipe/blob/master/examples/block-with-chaining.js)
+* [CoffeeScript Example](https://github.com/webpipes/node-webpipe/blob/master/examples/block-with-chaining.coffee)
