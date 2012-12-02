@@ -40,13 +40,13 @@ Pass a standard WebPipe "Block" descriptor to the constructor:
       "description": "Calculates the Square Root of a number.",
       "inputs": [{
         "name": "radicand",
-        type": "number",
-        "description", "The square root"
-      }].
+        "type": "number",
+        "description": "The square root"
+      }],
       "outputs": [{
-          "name": "square_root",
-          "type": "number",
-          "description": "The square root."
+        "name": "square_root",
+        "type": "number",
+        x"description": "The square root."
       }]
     })
 
