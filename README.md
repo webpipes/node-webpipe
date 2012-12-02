@@ -41,12 +41,12 @@ Pass a standard WebPipe "Block" descriptor to the constructor:
       "inputs": [{
         "name": "radicand",
         "type": "number",
-        "description": "The square root"
+        "description": "The square root."
       }],
       "outputs": [{
         "name": "square_root",
         "type": "number",
-        x"description": "The square root."
+        "description": "The square root."
       }]
     })
 
