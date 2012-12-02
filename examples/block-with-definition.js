@@ -1,20 +1,26 @@
-var http = require('http');
-var webpipes = require('../');
+var Block = require('../index').Block;
 
-var block = new webpipes.Block({
-  "name": "Square Root",
-  "description": "Calculates the Square Root of a number.",
+var block = new Block({
+  "name": "Fibonacci",
+  "description": "Calculates the nth Fibonacci number.",
   "inputs": [{
-      "name": "radicand",
+      "name": "n",
       "type": "number",
-      "description": "The number we want to find square root for."
+      "description": "The index of Fibonacci number to calculate."
   }],
   "outputs": [{
-      "name": "square_root",
+      "name": "fibonacci",
       "type": "number",
-      "description": "The square root."
+      "description": "The resulting Fibonacci number."
   }]
- }, function(inputs) {
-  return { square_root: Math.sqrt(inputs.radicand) };
 });
-http.createServer(block.nodeHandler()).listen(process.env.PORT || 3000);
+
+block.handle(function(inputs) {
+  return {
+      fibonacci: fib(inputs.n)
+  };
+})
+block.listen();
+
+// TODO: use node-fib?
+function fib(n) { return n < 2 ? 1 : fib(n-2) + fib(n-1); }

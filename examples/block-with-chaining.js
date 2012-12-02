@@ -1,12 +1,16 @@
-var webpipes = require('../');
+var Block = require('../index').Block;
 
-new webpipes.Block()
-  .name("Square Root")
-  .description("Calculates the Square Root of a number.")
-  .input("radicand", "number", "The number we want to find square root for.")
-  .output("square_root", "number", "The square root.")
+new Block()
+  .name("Fibonacci")
+  .description("Calculates the nth Fibonacci number.")
+  .input("n", "number", "The index of Fibonacci number to calculate.")
+  .output("fibonacci", "number", "The resulting Fibonacci number.")
   .handle(function(inputs) {
-    return { square_root: Math.sqrt(inputs.radicand) };
+    return {
+        fibonacci: fib(inputs.n)
+    };
   })
-  .listen();
+  .listen()
 
+// TODO: use node-fib?
+function fib(n) { return n < 2 ? 1 : fib(n-2) + fib(n-1); }
