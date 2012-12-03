@@ -62,15 +62,17 @@ class exports.Block
 
   # This does all the HTTP bits for Node.js
   _nodeHandler: (req, res) ->
+    corsHeaders = (res) ->
+      res.setHeader "Access-Control-Allow-Headers", "Content-Type"
+      res.setHeader "Access-Control-Allow-Methods", "OPTIONS, POST"
+      res.setHeader "Access-Control-Allow-Origin", "*"
     switch req.method.toUpperCase()
       when "OPTIONS"
-        res.writeHead 200, "OK",
-          "Content-Type": "application/json; charset=utf-8"
-          "Access-Control-Allow-Headers": "Content-Type"
-          "Access-Control-Allow-Methods": "OPTIONS,POST"
-          "Access-Control-Allow-Origin": "*"
+        corsHeaders res
+        res.writeHead 200, "OK", "Content-Type": "application/json; charset=utf-8"
         res.end JSON.stringify @def, null, 2
       when "POST"
+        corsHeaders res
         buffer_request req, (err, body) =>
           try
             throw err if err

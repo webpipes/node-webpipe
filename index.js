@@ -103,17 +103,22 @@
     };
 
     Block.prototype._nodeHandler = function(req, res) {
-      var _this = this;
+      var corsHeaders,
+        _this = this;
+      corsHeaders = function(res) {
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        res.setHeader("Access-Control-Allow-Methods", "OPTIONS, POST");
+        return res.setHeader("Access-Control-Allow-Origin", "*");
+      };
       switch (req.method.toUpperCase()) {
         case "OPTIONS":
+          corsHeaders(res);
           res.writeHead(200, "OK", {
-            "Content-Type": "application/json; charset=utf-8",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,POST",
-            "Access-Control-Allow-Origin": "*"
+            "Content-Type": "application/json; charset=utf-8"
           });
           return res.end(JSON.stringify(this.def, null, 2));
         case "POST":
+          corsHeaders(res);
           return buffer_request(req, function(err, body) {
             var request;
             try {
