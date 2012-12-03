@@ -34,7 +34,7 @@ class exports.Block
 
   _validateInputs: (inputs) ->
     errors = []
-    for input in @def.inputs
+    for input in @def.inputs when input.name isnt "*"
       # TODO: considers "null" to be missing, is this too restrictive?
       value = inputs[input.name]
       if not value? and input.required isnt false

@@ -59,6 +59,9 @@
       _ref = this.def.inputs;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         input = _ref[_i];
+        if (!(input.name !== "*")) {
+          continue;
+        }
         value = inputs[input.name];
         if (!(value != null) && input.required !== false) {
           errors.push("Input '" + input.name + "' is required.");
