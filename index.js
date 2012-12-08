@@ -24,6 +24,11 @@
       return this;
     };
 
+    Block.prototype.url = function(url) {
+      this.def.url = url;
+      return this;
+    };
+
     Block.prototype.input = function() {
       return this._io("inputs", arguments);
     };

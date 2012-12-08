@@ -30,6 +30,7 @@ Pass a function to the constructor, which binds the new object to "this" inside 
     block = new Block ->
       @name "Square Root"
       @description "Calculates the Square Root of a number."
+      @url "/block-endpoint"
       @input "radicand", "number", "The number we want to find square root for."
       @output "square_root", "number", "The square root."
 
@@ -38,6 +39,7 @@ Pass a standard WebPipe "Block" descriptor to the constructor:
     block = new Block({
       "name": "Square Root",
       "description": "Calculates the Square Root of a number.",
+      "url": "/block-endpoint",
       "inputs": [{
         "name": "radicand",
         "type": "number",

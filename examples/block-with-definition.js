@@ -3,6 +3,7 @@ var Block = require('../index').Block;
 var block = new Block({
   "name": "Fibonacci",
   "description": "Calculates the nth Fibonacci number.",
+	"url": "/block-endpoint"
   "inputs": [{
       "name": "n",
       "type": "number",

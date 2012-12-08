@@ -15,6 +15,9 @@ class exports.Block
   description: (description) ->
     @def.description = description
     this
+  url: (url) ->
+    @def.url = url
+    this
   input: ->
     @_io "inputs", arguments
   output: ->

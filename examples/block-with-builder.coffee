@@ -3,6 +3,7 @@ Block = require('../index').Block
 new Block ->
   @name "Fibonacci"
   @description "Calculates the nth Fibonacci number."
+	@url "/block-endpoint"
   @input "n", "number", "The index of Fibonacci number to calculate."
   @output "fibonacci", "number", "The resulting Fibonacci number."
   @handle (inputs) ->
